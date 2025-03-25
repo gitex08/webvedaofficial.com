@@ -1,0 +1,369 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    color: #fff;
+    padding: 1.5rem 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: #FFD700;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+header h2 {
+    text-align: center;
+    font-size: 4rem;
+    color: #FFD700;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    /*font-weight: 700;*/
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #E0B0FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffd900;
+}
+
+/* Section Styles */
+.section {
+    padding: 3rem 0;
+    margin: 1.5rem 0;
+    color: #E0B0FF;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    /* Bold weight */
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #E6E6FA;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    /* Bold weight */
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #E6E6FA;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Service Section */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.service {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #322049;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Portfolio Section */
+.portfolio-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: left;
+}
+
+.portfolio-item {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 140px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1px;
+}
+
+.portfolio-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+form input,
+form textarea {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    background-color: #b88dff;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #4ca0ff;
+}
+
+/* Footer */
+footer {
+    background-color: #c261fa;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* .head {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.text {
+    margin: 10px;
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+.commentbox {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.commentbox > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content {
+    width: 100%;
+}
+
+.user {
+    border: none;
+    outline: none;
+    margin: 5px 0;
+    color: #808080;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.commentinput > input {
+    border: none;
+    padding: 10px;
+    padding-left: 0;
+    outline: none;
+    border-bottom: 2px solid blue;
+    margin-bottom: 10px;
+    width: 95%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #808080;
+}
+
+.buttons button {
+    padding: 5px 10px;
+    background: lightgray;
+    color: #808080;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.policy {
+    margin: 20px 0;
+    font-size: 0.8em;
+    font-family: arial, sans-serif;
+    color: #808080;
+}
+
+.policy a {
+    text-decoration: none;
+    /* color: blue; */
+/* }
+
+.notify {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.notify > input {
+    margin-right: 5px;
+    
+} */
+
+/* Comment Box Styles */
+.comment-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for input, textarea, and publish button */
+textarea.usercomment, input.user {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button#publish {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button#publish[disabled] {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Comment display styles */
+.parents {
+    display: flex;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.parents img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.parents div {
+    flex-grow: 1;
+}
+
+.parents h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.parents p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.engagements img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.date {
+    font-size: 12px;
+    color: #888;
+}

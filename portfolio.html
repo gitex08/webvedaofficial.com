@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Professional Website</title>
+    <link rel="stylesheet" href="style.css">
+    <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+        <source src="back.mp4" type="video/mp4">
+    </video>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>WebVeda</h1>
+            <h2>Online Services</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Services</a></li>
+                    <li><a href="portfolio.html">Introduction</a></li>
+                    <li><a href="comment.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2>Introduction</h2>
+            <div class="portfolio-gallery">
+                <div class="portfolio-item">
+                    <img src="portfolio.jpg" alt="Hey its Gitesh">
+                </div>
+                <h3>Gitesh Ahire <br>Computer Expert <p>Mobile No. : 9422014360</p>
+                </h3>
+                <div class="portfolio-item">
+                    <img src="portfolio 2.jpg" alt="Hey its Pankaj">
+                </div>
+                <h3>Pankaj Gunjal<br>Persuasive <p>Mobile No. : 8788162266</p>
+                </h3>
+                <div class="portfolio-item">
+                    <img src="portfolio 3.jpg" alt="Hey its Rushikesh">
+                </div>
+                <h3>Rushikesh Kadam<br>Banking Adviser <BR>/Computer Expert <p>Mobile no. : 95884 89008</p>
+                </h3>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="47363c1b-0724-4720-ad29-894ed77c793f">
+
+            <!-- Form Inputs. Each input must have a name="" attribute -->
+            <label for="name">Your Name</label>
+            <input type="text" name="name" required>
+            <label for="name">Your Mail</label>
+            <input type="email" name="email" required>
+            <label for="name">Type Your Message</label>
+            <textarea name="message" required></textarea>
+
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <!-- Custom Confirmation / Success Page -->
+            <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+            <button type="submit">Send Message</button>
+
+        </form>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Professional Web Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

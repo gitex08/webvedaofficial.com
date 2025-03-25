@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Professional Website</title>
+    <link rel="stylesheet" href="style.css">
+    <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+        <source src="back.mp4" type="video/mp4">
+    </video>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>WebVeda</h1>
+            <h2>Online Services</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Services</a></li>
+                    <li><a href="portfolio.html">Introduction</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- <div class="container">
+        <div class="head">
+            <h1>Post a Comment</h1>
+        </div>
+        <div><span id="comment">0</span>Comments</div>
+        <div class="text">
+            <p>We are Happy to hear from you</p>
+        </div>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <img src="user1.png" alt="">
+            <div class="content">
+                <h2>Comment as:</h2>
+                <input type="text" value="Anonymous" class="user">
+
+                <div class="commentinput">
+                    <input type="text" placeholder="Enter comment" class="usercomment">
+                    <div class="buttons">
+                        <button type="submit" disabled id="Publish">Publish</button>
+                        <div class="notify">
+                            <input type="checkbox" class="notifyinput"> <span>Notify me</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="policy">This site is protected by reCAPTCHA and the Google <a href="">privacy policy</a>and <a href="">Terms of Service</a>apply.</p>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="comment-section">
+        <input type="text" class="user" placeholder="Enter your name (Optional)">
+        <textarea class="usercomment" placeholder="Write a comment..."></textarea>
+        <button id="publish" disabled>Publish</button>
+        <div class="comments"></div>
+    </div>
+    
+
+
+    <!-- <script>
+        "use strict";
+
+        const userId = {
+            name: null,
+            identity: null,
+            image: null,
+            message: null,
+            date: null,
+        }
+
+        const userComment = document.querySelector(".usercomment");
+        const publishBtn = document.querySelector("#publish");
+        const comments = document.querySelector(".comments");
+        const userName = document.querySelector(".user");
+
+        userComment.addEventListener("input", e => {
+            if(!userComment.value) {
+                publishBtn.setAttribute("disabled", "disabled");
+                publishBtn.classList.remove("abled")
+            }else {
+                publishBtn.removeAttribute("disabled");
+                publishBtn.classList.add("abled")
+            }
+        })
+
+
+        function addPost() {
+            console.log("The button works!")
+            if(!userComment.value) return;
+            userId.name = userName.value;
+            if(userId.name === "Anonymous") {
+                userId.identity = false;
+                userId.image = "anonymous.png";
+            }else {
+                userId.identity = true;
+                userId.image = "user.png"
+            }
+
+            userId.message = userComment.value;
+            userId.date = new Date().toLocaleString()
+            let published = 
+            `<div class="parents">
+                <img src="${userId.image}">
+                <div>
+                    <h1>${userId.name}</h1>
+                    <p>${userId.message}</p>
+                    <div class="engagements"><img src="like.png"><img src="share.png"></div>
+                    <span class="date">${userId.date}</span>
+                </div>
+             </div>`;
+
+             comments.innerHTML += published;
+             userComment.value = "";
+        }
+
+        publishBtn.addEventListener("click", addPost)
+    </script> -->
+    <script>"use strict";
+
+// Object to hold user data for each comment
+const userId = {
+    name: null,
+    identity: null,
+    image: null,
+    message: null,
+    date: null,
+};
+
+// DOM elements
+const userComment = document.querySelector(".usercomment");
+const publishBtn = document.querySelector("#publish");
+const comments = document.querySelector(".comments");
+const userName = document.querySelector(".user");
+
+// Enable/Disable the publish button based on user input
+userComment.addEventListener("input", e => {
+    if (!userComment.value.trim()) {
+        publishBtn.setAttribute("disabled", "disabled");
+        publishBtn.classList.remove("abled");
+    } else {
+        publishBtn.removeAttribute("disabled");
+        publishBtn.classList.add("abled");
+    }
+});
+
+// Function to add a comment post
+function addPost() {
+    // Don't allow empty or blank comments
+    if (!userComment.value.trim()) return;
+
+    // Set user data (if name is not provided, use "Anonymous")
+    userId.name = userName.value.trim() || "Anonymous";
+    
+    if (userId.name === "Anonymous") {
+        userId.identity = false;
+        userId.image = "anonymous.png"; // Placeholder for anonymous avatar
+    } else {
+        userId.identity = true;
+        userId.image = "user.png"; // Placeholder for user avatar
+    }
+
+    userId.message = userComment.value.trim();
+    userId.date = new Date().toLocaleString();
+
+    // Create new comment elements dynamically
+    const commentDiv = document.createElement("div");
+    commentDiv.classList.add("parents");
+
+    const img = document.createElement("img");
+    img.src = userId.image;
+    img.alt = `${userId.name}'s Avatar`; // Add alt text for accessibility
+
+    const contentDiv = document.createElement("div");
+
+    const userNameH1 = document.createElement("h1");
+    userNameH1.textContent = userId.name;
+
+    const userMessageP = document.createElement("p");
+    userMessageP.textContent = userId.message;
+
+    const engagementDiv = document.createElement("div");
+    engagementDiv.classList.add("engagements");
+
+    const likeImg = document.createElement("img");
+    likeImg.src = "like.png"; // Placeholder for like icon
+    likeImg.alt = "Like";
+
+    const shareImg = document.createElement("img");
+    shareImg.src = "share.png"; // Placeholder for share icon
+    shareImg.alt = "Share";
+
+    engagementDiv.appendChild(likeImg);
+    engagementDiv.appendChild(shareImg);
+
+    const dateSpan = document.createElement("span");
+    dateSpan.classList.add("date");
+    dateSpan.textContent = userId.date;
+
+    contentDiv.appendChild(userNameH1);
+    contentDiv.appendChild(userMessageP);
+    contentDiv.appendChild(engagementDiv);
+    contentDiv.appendChild(dateSpan);
+
+    commentDiv.appendChild(img);
+    commentDiv.appendChild(contentDiv);
+
+    // Append the new comment to the comments section
+    comments.appendChild(commentDiv);
+
+    // Clear input fields after posting
+    userComment.value = "";
+    userName.value = ""; // Optionally clear name field
+    publishBtn.setAttribute("disabled", "disabled");
+    publishBtn.classList.remove("abled");
+}
+
+// Add event listener to the publish button
+publishBtn.addEventListener("click", addPost);
+</script>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Professional Web Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
