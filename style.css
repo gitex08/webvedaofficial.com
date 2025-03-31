@@ -129,12 +129,12 @@ p {
 }
 
 /* Portfolio Section */
-.portfolio-gallery {
+/*.portfolio-gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
     justify-content: left;
-}
+}*/
 
 .portfolio-item {
     background-color: #fff;
