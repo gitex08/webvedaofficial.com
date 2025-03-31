@@ -129,7 +129,7 @@ p {
 }
 
 /* Portfolio Section */
-/*.portfolio-gallery {
+.portfolio-gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
@@ -156,7 +156,7 @@ p {
 .portfolio-item p {
     font-size: 1rem;
     color: #666;
-}*/
+}
 
 /* Form Styles */
 form {
